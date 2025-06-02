@@ -5,4 +5,7 @@ interface Props {
 }
 
 export default function ProjectLongDescription({description}: Props) {
+    return (
+        <p>{description}</p>
+    )
 }

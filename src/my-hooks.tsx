@@ -7,7 +7,7 @@ export function useWindowSize() {
     function updateSize() {
 
       clearTimeout(timeout.current)
-      timeout.current = setTimeout(() => setSize([window.innerWidth, window.innerHeight]), 500)
+      timeout.current = window.setTimeout(() => setSize([window.innerWidth, window.innerHeight]), 500)
     }
     window.addEventListener('resize', updateSize);
     updateSize();
@@ -39,7 +39,7 @@ export const useContainerDimensions = (myRef: RefObject<HTMLElement | null>) => 
 
     const handleResize = () => {
       clearTimeout(timeout.current)
-      timeout.current = setTimeout(() => setDimensions(getDimensions()), 500)
+      timeout.current = window.setTimeout(() => setDimensions(getDimensions()), 500)
       
     }
 
