@@ -1,22 +1,26 @@
-import { ReactNode } from "react"
 import { Link, useLocation } from "react-router"
+import cloud from '../../assets/ProjectDecorators/cloud.png'
 
 interface Props {
     to: string
-    children: ReactNode
+    linkText: string
+    className?: string
 }
 
-export default function HeaderLink({to, children}: Props) {
+export default function HeaderLink({to, linkText, className}: Props) {
 
     const location = useLocation()
     
-    const selectedClass = location.pathname == to ? 'bg-gradient-to-t from-gray-900 to-gray-500' : ''
+    const selectedLink = location.pathname == to ? 'opacity-100 font-bold' : ''
+
+    const selectedText = location.pathname == to ? "text-white" : 'text-gray-500'
+
+    const selectedImage = location.pathname == to ? 'brightness-50 opacity-75' : 'hover:opacity-80 hover:brightness-85'
 
     return (
-        <Link to={to}
-            className={`p-2 m-2 h-max border-1 border-white rounded-t ${selectedClass}`}
-        >
-                {children}
+        <Link to={to} className={`w-50 p-0 relative ${className} ${selectedLink}`}>
+            <p className={`absolute text-xl brightness-100 z-100 font-semibold ${selectedText} top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3`}>{linkText}</p>
+            <img src={cloud} alt='' className={`${selectedImage}`}/>
         </Link>
     )
 }
