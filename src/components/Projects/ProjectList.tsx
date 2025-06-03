@@ -69,16 +69,23 @@ export default function ProjectList() {
     ]
     return (
         <div className="max-w-screen">
-            {items.map((item, index) =>
-                <div className="mt-15 mb-3" key={index}>
-                    <InView margin="-10% 200% -10% 200%" amount={0.4}>
-                        <AppearIntoView origin={!(index%2) ? 'left' : 'right'}>
-                            <MemoizedProjectCard
-                                project={item}
-                            />
-                        </AppearIntoView>
-                    </InView>
-                </div>
+            {items.map((item, index) => {
+
+                const rand = Math.floor(Math.random()*items.length)
+
+                return (
+                    <div className="mt-15 mb-3" key={index}>
+                        <InView margin="-10% 200% -10% 200%" amount={0.4}>
+                            <AppearIntoView origin={!(index%2) ? 'left' : 'right'}>
+                                <MemoizedProjectCard
+                                    project={item}
+                                    randomValue={rand}
+                                />
+                            </AppearIntoView>
+                        </InView>
+                    </div>
+                )
+            }
             )}
         </div>
     )
