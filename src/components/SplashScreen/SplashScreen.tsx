@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect, useMemo } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { bgStrip1, bgStrip2, bgStrip3, portfolioLogo } from "../../assets/images";
 import { AppContext } from "../../model/context";
 import { Link } from "react-router";
