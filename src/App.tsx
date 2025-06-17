@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router'
 import Navbar from './components/Nav/Navbar'
 import AboutPage from './pages/AboutPage'
-import HomePage from './pages/HomePage'
+import ProjectPage from './pages/ProjectPage'
 import { useContext } from 'react'
 import { AppContext } from './model/context'
+import HomePage from './pages/HomePage'
 
 function App() {
 
@@ -16,13 +17,15 @@ function App() {
           <Route 
             path='/'
             element={<HomePage />}
-          >
-          </Route>
+          />
           <Route 
             path='/about'
             element={<AboutPage />}
-          >
-          </Route>
+          />
+          <Route 
+            path='/projects'
+            element={<ProjectPage />}
+          />
         </Routes>
       </main>
     </AppContext.Provider>

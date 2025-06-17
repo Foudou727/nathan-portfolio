@@ -1,9 +1,10 @@
-import ProjectList from "../components/Projects/ProjectList";
+import SplashScreen from "../components/SplashScreen/SplashScreen";
 
 export default function HomePage() {
+
     return (
-        <div>
-            <ProjectList />
-        </div>
+        <SplashScreen>
+            <h1>Bienvenue dans mon Portfolio</h1>
+        </SplashScreen>
     )
 }

@@ -4,6 +4,15 @@ body {
   height: 100%;
   background: linear-gradient(105deg, rgb(131, 210, 247), rgb(249, 205, 233), rgb(229, 192, 244));
   color: rgb(151, 140, 140);
-  overflow-x: hidden;
   padding-bottom: 10vh;
+  overflow-x: hidden;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 10000px;
+  }
 }

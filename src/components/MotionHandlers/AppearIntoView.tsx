@@ -1,7 +1,7 @@
 import { motion, useInView, Variants } from 'motion/react';
 import { ReactNode, RefObject, useContext } from "react";
 import { AppContext, InViewContext } from '../../model/context';
-import { useContainerDimensions, useWindowSize } from "../../my-hooks";
+import { useContainerDimensions, useMobile, useWindowSize } from "../../my-hooks";
 
 interface Props {
     origin: 'left' | 'right'
@@ -12,19 +12,23 @@ interface Props {
 export default function AppearIntoView({origin, index, children}: Props) {
 
     const [width] = useWindowSize()
-    
+
+    const isMobile = useMobile()
+
     const appContext = useContext(AppContext)
     const inViewContext = useContext(InViewContext)
     const ref = inViewContext.elementRef as RefObject<HTMLDivElement | null>
     const dimensions = useContainerDimensions(ref) 
     
     const randomOffset = index ? (appContext.cardSeed[index]*10)%300 - 100 : 0
-    console.log(index, randomOffset)
 
     const isInView = useInView(ref, {
-        margin: '10% 200% 10% 200%',
+        margin: '-10% 200% -10% 200%',
         amount: 0.4
     })
+
+    const bigScreenX = origin == 'left' ? 200 + randomOffset : width - 200 - dimensions.width - randomOffset
+    const onScreenX = !isMobile ? bigScreenX : width/4 - dimensions.width/2
 
     const variants: Variants = {
         offScreen: {
@@ -36,7 +40,7 @@ export default function AppearIntoView({origin, index, children}: Props) {
         },
 
         onScreen: {
-            x: origin == 'left' ? 200 + randomOffset : width - 200 - dimensions.width - randomOffset,
+            x: onScreenX,
             opacity: 1,
             transition: {
                 type: 'spring',

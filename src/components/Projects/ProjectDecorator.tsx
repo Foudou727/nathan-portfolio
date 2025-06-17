@@ -1,25 +1,7 @@
-import cloud from '../../assets/ProjectDecorators/cloud.png'
-import star from '../../assets/ProjectDecorators/one-star-icon.png'
-//import sun from '../../assets/ProjectDecorators/sun.png'    
-import nightTime from '../../assets/ProjectDecorators/night-time.png'
-import tomato from '../../assets/ProjectDecorators/tomato.png'
-import barbecue from '../../assets/ProjectDecorators/barbecue.png'
-import thunder from '../../assets/ProjectDecorators/thunder.png'
-import iceCream from '../../assets/ProjectDecorators/ice-cream.png'
-import cinnamonRoll from '../../assets/ProjectDecorators/cinnamon roll.png'
-import tree from '../../assets/ProjectDecorators/tree.png'
-import cookie from '../../assets/ProjectDecorators/cookie.png'
-//import carrot from '../../assets/ProjectDecorators/carrot.png'
-import bee from '../../assets/ProjectDecorators/bee.png'
-import ladybug from '../../assets/ProjectDecorators/ladybug.png'
-//import fox from '../../assets/ProjectDecorators/fox.png'
-//import tutel from '../../assets/ProjectDecorators/tutel.png'
-//import whale from '../../assets/ProjectDecorators/whale.png'
-import butterfly from '../../assets/ProjectDecorators/butterfly.png'
-
 import { useContext } from 'react'
 import { AppContext } from '../../model/context'
 import React from 'react'
+import { barbecue, bee, butterfly, cinnamonRoll, cloud, cookie, iceCream, ladybug, nightTime, star, thunder, tomato, tree } from '../../assets/images'
 
 
 interface Props {
