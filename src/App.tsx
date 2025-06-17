@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router'
 import Navbar from './components/Nav/Navbar'
-import AboutPage from './pages/AboutPage'
+import HomePage from './pages/AboutPage'
 import ProjectPage from './pages/ProjectPage'
 import { useContext } from 'react'
 import { AppContext } from './model/context'
-import HomePage from './pages/HomePage'
+import SplashScreen from './components/SplashScreen/SplashScreen'
 
 function App() {
 
@@ -16,11 +16,11 @@ function App() {
         <Routes>
           <Route 
             path='/'
-            element={<HomePage />}
+            element={<SplashScreen />}
           />
           <Route 
-            path='/about'
-            element={<AboutPage />}
+            path='/home'
+            element={<HomePage />}
           />
           <Route 
             path='/projects'

@@ -84,5 +84,5 @@ export const AppContext = createContext<AppContextType>({
     projects,
     cardSeed: projects.map(() => {
         return Math.floor(Math.random()*8081)
-    })
+    }),
 })
