@@ -2,15 +2,13 @@ import { Route, Routes } from 'react-router'
 import Navbar from './components/Nav/Navbar'
 import HomePage from './pages/AboutPage'
 import ProjectPage from './pages/ProjectPage'
-import { useContext } from 'react'
-import { AppContext } from './model/context'
 import SplashScreen from './components/SplashScreen/SplashScreen'
+import AppContextProvider from './components/Providers/AppContextProvider'
 
 function App() {
 
-  const AppContextValues = useContext(AppContext)
   return (
-    <AppContext.Provider value={AppContextValues}>
+    <AppContextProvider>
       <Navbar />
       <main>
         <Routes>
@@ -28,7 +26,7 @@ function App() {
           />
         </Routes>
       </main>
-    </AppContext.Provider>
+    </AppContextProvider>
   )
 }
 

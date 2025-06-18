@@ -29,8 +29,8 @@ export default function SplashScreen({}: Props) {
                     backgroundImage: `url(${image})`,
                     transform: 'rotate(30deg)',
                     translate: '-50% -50%',
-                    width: '600vw',
-                    height: '600vh',
+                    width: '800vw',
+                    height: '800vh',
                     animation: 'animatedBackground 200s linear infinite'
                 }}
             >

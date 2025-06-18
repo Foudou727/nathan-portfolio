@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useMemo } from 'react'
 import { AppContext } from '../../model/context'
 import React from 'react'
 import { barbecue, bee, butterfly, cinnamonRoll, cloud, cookie, iceCream, ladybug, nightTime, star, thunder, tomato, tree } from '../../assets/images'
@@ -12,7 +12,7 @@ function PrivateProjectDecorator({index}: Props) {
 
     const randomValue = useContext(AppContext).cardSeed[index]
 
-    const decorators = [
+    const decorators = useMemo(() => [
         (
             <>
                 <img src={cloud} alt={'cloud'} 
@@ -77,7 +77,7 @@ function PrivateProjectDecorator({index}: Props) {
             </>
         )
 
-    ]
+    ], [])
 
 
     return decorators[randomValue%decorators.length]

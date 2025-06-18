@@ -8,19 +8,23 @@ type Props = {
     index: number
 }
 
-export default function ProjectCard({project, index}: Props) {
-    console.log(project.image)
+function PrivateProjectCard({project, index}: Props) {
+
     return (
         <div className="relative">
             <div className="relative">
                 <ProjectDecorator index={index} />
                 <div className="p-2 border-6 border-gray-600 bg-radial to-white from-gray-500 fill-gray-800 rounded-4xl m-2 w-100 h-100 md:w-150 md:h-150">
-                    <div className="m-2 border-2 border-black flex-col rounded-4xl h-97/100 w-auto bg-blue-200">
+                    <div className="m-2 p-2 border-2 border-black flex-col rounded-4xl h-97/100 w-auto bg-blue-200">
                         <h1 className="m-6 text-xl">{project.name}</h1>
                         <Separator />
-                        <img className="flex-4 justify-self-center m-2 w-7/8 h-auto" src={project.image} alt={project.name} />
+                        <div className="m-2 flex content-center w-96/100 h-auto max-h-2/3 overflow-y-scroll flex-nowrap"
+                            style={{scrollbarWidth: 'none', alignItems: 'center'}}
+                        >
+                            <img className="items-center w-max m-auto" src={project.image} alt={project.name}/>
+                        </div>
                         <Separator />
-                        <p className="m-4">{project.description}</p>
+                        <p className="m-4 text-center italic">{project.comment}</p>
                     </div>
                 </div>
             </div>
@@ -29,4 +33,6 @@ export default function ProjectCard({project, index}: Props) {
     )
 }
 
-export const MemoizedProjectCard = React.memo(ProjectCard)
+const ProjectCard = React.memo(PrivateProjectCard)
+
+export default ProjectCard
