@@ -1,6 +1,6 @@
 import { Project } from "../../model/projects"
 import ProjectCard from "./ProjectCard"
-import ProjectLongDescription from "./ProjectLongDescription"
+import Description from "./Description"
 
 interface Props {
     origin: 'left' | 'right'
@@ -18,7 +18,7 @@ export default function ProjectListItem({origin, index, item}: Props) {
             />
         ),
         (
-            <ProjectLongDescription description={item.description}/>
+            <Description description={item.description}/>
         )
     ]
     return (

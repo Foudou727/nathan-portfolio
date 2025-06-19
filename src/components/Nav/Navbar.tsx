@@ -3,8 +3,9 @@ import HeaderLink from "./HeaderLink";
 
 export default function Navbar() {
     const links = [
-        {to: '/home', text: 'Home'},
-        {to: '/projects', text: 'Projects'},
+        {to: '/home', text: 'Accueil'},
+        {to: '/projects', text: 'Projets'},
+        {to: '/experiences', text: 'Expériences'}
     ]
 
     return (

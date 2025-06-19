@@ -3,6 +3,10 @@ import { AppContext } from "../../model/context";
 import htc from '../../assets/ProjectAssets/htc.webp';
 import placeholder from '../../assets/ProjectAssets/placeholder.jpg';
 import portfolioScreen from '../../assets/ProjectAssets/portfolio-screen.png'
+import { Experience } from "../../model/experiences";
+import lyceeGalilee from "../../assets/ExperienceAssets/galilee.png"
+import iutLyon1 from "../../assets/ExperienceAssets/iut.jpg"
+import luckysit from "../../assets/ExperienceAssets/luckysit.png"
 
 interface Props {
     children: ReactNode
@@ -44,8 +48,32 @@ export default function AppContextProvider({children}: Props) {
         return Math.floor(Math.random()*8011)
     }), [])
 
+    const experiences: Experience[] = useMemo(() => [
+        {
+            name: 'Lycée Galilée',
+            image: lyceeGalilee,
+            description: "Lycée dans lequel j'ai obtenu un bac général, mention Très Bien, spécialités Maths et NSI. J'y ai vu les bases du Python, du SQL, du réseau, et de l'algorithmie",
+            startDate: 'Septembre 2021',
+            endDate: 'Juillet 2023'
+        },
+        {
+            name: 'IUT Lyon 1 - Année 1 et 2',
+            image: iutLyon1,
+            description: "IUT affilié à l'UCBL où j'ai pu intégrer le département Informatique, dans lequel j'ai suivi le parcours Réalisation d'Applications",
+            startDate: 'Septembre 2023',
+            endDate: 'Avril 2025'
+        },
+        {
+            name: 'Stage de 2eme année - Luckysit',
+            image: luckysit,
+            description: "Entreprise proposant des solutions de Fan Experience, j'ai pu, pendant 3 mois, apprendre à manipuler React, Next et Nest, ainsi que les services Cloud AWS ",
+            startDate: '14 Avril 2025',
+            endDate: '11 Juillet 2025'
+        }
+    ], [])
+
     return (
-        <AppContext.Provider value={{projects, cardSeed}}>
+        <AppContext.Provider value={{projects, cardSeed, experiences}}>
             {children}
         </AppContext.Provider>
     )

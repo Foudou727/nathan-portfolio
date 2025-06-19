@@ -1,5 +1,6 @@
 import { createContext, RefObject } from "react"
 import { Project } from "./projects"
+import { Experience } from "./experiences"
 
 
 export type InViewContextType = {
@@ -10,6 +11,7 @@ export type InViewContextType = {
 export type AppContextType = {
     projects: Project[]
     cardSeed: number[]
+    experiences: Experience[]
 }
 
 export const InViewContext = createContext<InViewContextType>({
@@ -19,5 +21,6 @@ export const InViewContext = createContext<InViewContextType>({
 
 export const AppContext = createContext<AppContextType>({
     projects: [],
-    cardSeed: []
+    cardSeed: [],
+    experiences: [],
 })

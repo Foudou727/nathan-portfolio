@@ -4,6 +4,7 @@ import HomePage from './pages/AboutPage'
 import ProjectPage from './pages/ProjectPage'
 import SplashScreen from './components/SplashScreen/SplashScreen'
 import AppContextProvider from './components/Providers/AppContextProvider'
+import ExperiencePage from './pages/ExperiencePage'
 
 function App() {
 
@@ -23,6 +24,10 @@ function App() {
           <Route 
             path='/projects'
             element={<ProjectPage />}
+          />
+          <Route 
+            path='/experiences'
+            element={<ExperiencePage />}
           />
         </Routes>
       </main>
